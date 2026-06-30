@@ -1,0 +1,15 @@
+﻿services:
+  costwatch-db:
+    image: postgres:latest
+    container_name: costwatch_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_strong_password_here
+      POSTGRES_DB: CostWatchDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
